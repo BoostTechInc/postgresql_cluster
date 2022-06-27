@@ -5,6 +5,17 @@
 
 ### Deploy a Production Ready PostgreSQL High-Availability Cluster (based on "Patroni" and "DCS(etcd)"). Automating with Ansible.
 
+#### Boost specific:
+
+All the variables are already set up, except passwords and keys.
+You need to set the following vars:
+
+- patroni_superuser_password
+- patroni_replication_password
+- AZURE_STORAGE_ACCESS_KEY
+
+#### General
+
 This Ansible playbook is designed for deploying a PostgreSQL high availability cluster on dedicated physical servers for a production environment.
 Сluster can be deployed in virtual machines for test environments and small projects.
 
