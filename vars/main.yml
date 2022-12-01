@@ -323,9 +323,10 @@ pg_probackup_patroni_cluster_bootstrap_command: "pg_probackup-{{ pg_probackup_ve
 wal_g_install: true  # or 'true'
 wal_g_ver: "1.1"
 wal_g_json:  # generate conf file {{ postgresql_home_dir }}/.walg.json
-  - {option: "AZURE_STORAGE_ACCESS_KEY", value: "XXXXXXXXXXXX"}  # please change
-  - {option: "AZURE_STORAGE_ACCOUNT", value: "booststorage"}
-  - {option: "WALG_AZ_PREFIX", value: "azure://dbbackups/prod"}
+  - {option: "AWS_SECRET_ACCESS_KEY", value: "XXXXXXXXXXXX"}  # please change
+  - {option: "AWS_ACCESS_KEY_ID", value: "YYYYYYYYYYYYYY"} # please change
+  - {option: "WALG_S3_PREFIX", value: "s3://basketball-prod-db-backups/basketball-prod-backups"}
+  - {option: "AWS_REGION", value: "us-east-2"}
   - {option: "WALG_UPLOAD_CONCURRENCY", value: "8"}
   - {option: "WALG_DOWNLOAD_CONCURRENCY", value: "8"}
   - {option: "PGDATA", value: "{{ postgresql_data_dir }}"}
